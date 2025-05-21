@@ -49,3 +49,10 @@
     linear-gradient(135deg, #f8c3fc 0%, #d5a9f8 100%);
   background-size: 60px 60px, 100% 100%;
 }
+
+/* Dark theme gradient for scenario section */
+.dark-hexagon-gradient {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0h50v50H50V0zm0 50h50v50H50V50zM0 50h50v50H0V50zM0 0h50v50H0V0z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #4a1d96 0%, #be185d 100%);
+  background-size: 60px 60px, 100% 100%;
+}
