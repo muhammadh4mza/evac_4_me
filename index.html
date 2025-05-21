@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,23 +7,60 @@
     <meta name="description" content="Evac4Me helps users evacuate safely during natural and manmade disasters with real-time alerts, accessible interface, and family notifications." />
     <meta name="author" content="Chance4Change" />
 
+    <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:title" content="Evac4Me - Emergency Evacuation App for Everyone" />
     <meta property="og:description" content="Evac4Me helps users evacuate safely during natural and manmade disasters with real-time alerts, accessible interface, and family notifications." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://evac4me.com" />
 
+    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@evac4me" />
+    <meta name="twitter:creator" content="@evac4me" />
+    <meta name="twitter:title" content="Evac4Me - Emergency Evacuation App for Everyone" />
+    <meta name="twitter:description" content="Evac4Me helps users evacuate safely during natural and manmade disasters with real-time alerts, accessible interface, and family notifications." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Favicon (add your own favicon link here) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Preconnect and Preload for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Poppins font with all weights and italics -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Google Fonts: Inter -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- Preload critical CSS -->
+    <style>
+      /* Fallback font while Poppins loads */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+      /* Once loaded, Poppins will take precedence */
+      .font-poppins-loaded body {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+    </style>
+    <script>
+      // Font loading observer
+      document.documentElement.classList.add('font-poppins-loaded');
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    
+    <!-- Scripts -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Optional: Load scripts with defer -->
+    <script>
+      // You might want to add a loader while your app is loading
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialization code if needed
+      });
+    </script>
   </body>
 </html>

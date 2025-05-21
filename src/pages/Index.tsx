@@ -33,15 +33,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#f9f2f7]">
       <Header />
       <HeroSection />
       <ScenarioSection />
       <FeaturesSection />
       <HowItWorksSection />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <CollaborateSection />
-      <CTASection />
+      {/* <CTASection /> */}
       <Footer />
     </div>
   );

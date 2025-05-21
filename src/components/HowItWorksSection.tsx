@@ -1,94 +1,129 @@
-
 import React from 'react';
 import { Card } from "@/components/ui/card";
+import {
+  UserCheck,
+  BookOpen,
+  Laptop,
+  Users,
+  Briefcase,
+  Award
+} from 'lucide-react';
 
-// Testimonial data
-const testimonials = [
+const steps = [
   {
-    name: "Melvin",
-    position: "CEO Tokpet",
-    content: "I never thought that I would have the technical skills that I have now. Thanks to this bootcamp program which gave me the opportunity to learn from industry experts and prepared me for an amazing new career.",
-    isDark: false
+    id: 1,
+    title: "Application",
+    description: "Submit your application and take our simple assessment",
+    icon: <UserCheck className="w-5 h-5" />,
+    color: "bg-blue-100 text-blue-600"
   },
   {
-    name: "Jarwo Sutejo",
-    position: "CEO Tokpet",
-    content: "I learned a lot about how to work in a team and face challenges in this bootcamp program. My study experience here has helped me broaden my professional network and prepared me for a career in technology.",
-    isDark: true
+    id: 2,
+    title: "Onboarding",
+    description: "Get oriented with our learning platform and meet your cohort",
+    icon: <BookOpen className="w-5 h-5" />,
+    color: "bg-purple-100 text-purple-600"
   },
   {
-    name: "Melvin",
-    position: "CEO Tokpet",
-    content: "I am happy to have joined this bootcamp program. Besides gaining technical knowledge, I also learned a lot about teamwork and how to work in a productive work environment. I feel more confident and ready to face future challenges.",
-    isDark: false
+    id: 3,
+    title: "Learning Phase",
+    description: "Hands-on training with industry experts and projects",
+    icon: <Laptop className="w-5 h-5" />,
+    color: "bg-amber-100 text-amber-600"
   },
   {
-    name: "Melvin",
-    position: "CEO Tokpet",
-    content: "I am very impressed with the quality of the instructors in this bootcamp program. They really mastered the material and provided me with a lot of valuable insights. I recommend this program to anyone looking to start a career in the technology industry.",
-    isDark: false
+    id: 4,
+    title: "Collaboration",
+    description: "Work in teams on real-world case studies",
+    icon: <Users className="w-5 h-5" />,
+    color: "bg-emerald-100 text-emerald-600"
   },
   {
-    name: "Melvin",
-    position: "CEO Tokpet",
-    content: "I love how well designed this bootcamp program is. They provide clear and in-depth explanations of the topics being taught, and allow me to study in a very practical way. I feel I have learned a lot in such a short time.",
-    isDark: false
+    id: 5,
+    title: "Career Prep",
+    description: "Resume workshops, mock interviews, and networking",
+    icon: <Briefcase className="w-5 h-5" />,
+    color: "bg-rose-100 text-rose-600"
+  },
+  {
+    id: 6,
+    title: "Graduation",
+    description: "Showcase your portfolio and receive certification",
+    icon: <Award className="w-5 h-5" />,
+    color: "bg-indigo-100 text-indigo-600"
   }
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-20 hexagon-gradient scrolling-section">
+    <section id="how-it-works" className="py-12 sm:py-16 lg:py-20 bg-[#f9f2f7] min-h-[600px] flex items-center relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 leading-tight">
-          Said those who joined our<br />bootcamp program
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* First row - 2 cards */}
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className={`p-8 rounded-3xl ${testimonials[0].isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-                  <div>
-                    <h4 className="font-semibold">{testimonials[0].name}</h4>
-                    <p className={`text-sm ${testimonials[0].isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonials[0].position}</p>
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-gray-900 mb-3 sm:mb-4">
+            Our Proven 6-Step Process
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600">
+            From beginner to job-ready professional in weeks
+          </p>
+        </div>
+
+        {/* Timeline - Desktop */}
+        <div className="hidden md:block">
+          <div className="relative">
+            {/* Progress line */}
+            <div className="absolute left-1/4 right-1/4 top-1/2 h-1.5 bg-gray-200/80 -translate-y-1/2"></div>
+            
+            <div className="relative grid grid-cols-6 gap-4">
+              {steps.map((step) => (
+                <div key={step.id} className="flex flex-col items-center z-10">
+                  <div className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center mb-4 transition-all hover:scale-110`}>
+                    {step.icon}
+                  </div>
+                  <div className="text-center px-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">{step.title}</h3>
+                    <p className="text-xs lg:text-sm text-gray-600 leading-tight">{step.description}</p>
                   </div>
                 </div>
-                <p className={testimonials[0].isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonials[0].content}</p>
-              </Card>
-              
-              <Card className={`p-8 rounded-3xl ${testimonials[1].isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-                  <div>
-                    <h4 className="font-semibold">{testimonials[1].name}</h4>
-                    <p className={`text-sm ${testimonials[1].isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonials[1].position}</p>
-                  </div>
-                </div>
-                <p className={testimonials[1].isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonials[1].content}</p>
-              </Card>
-            </div>
-          </div>
-          
-          {/* Second row - 3 cards */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.slice(2).map((testimonial, index) => (
-                <Card key={index} className={`p-8 rounded-3xl ${testimonial.isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
-                    <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className={`text-sm ${testimonial.isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonial.position}</p>
-                    </div>
-                  </div>
-                  <p className={testimonial.isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonial.content}</p>
-                </Card>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Timeline - Tablet (2 columns) */}
+        <div className="hidden sm:block md:hidden">
+          <div className="grid grid-cols-2 gap-6">
+            {steps.map((step) => (
+              <Card key={step.id} className="p-5 rounded-lg border border-gray-200/50 hover:border-gray-300 transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-full ${step.color} flex items-center justify-center mt-1`}>
+                    {step.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 text-sm lg:text-base">{step.title}</h3>
+                    <p className="text-gray-600 mt-1 text-xs lg:text-sm">{step.description}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline - Mobile */}
+        <div className="sm:hidden space-y-4">
+          {steps.map((step) => (
+            <Card key={step.id} className="p-4 rounded-lg border border-gray-200/50 hover:border-gray-300 transition-colors">
+              <div className="flex items-start gap-3">
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full ${step.color} flex items-center justify-center mt-0.5`}>
+                  {React.cloneElement(step.icon, { className: "w-4 h-4" })}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-sm">{step.title}</h3>
+                  <p className="text-gray-600 mt-1 text-xs">{step.description}</p>
+                </div>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

@@ -1,98 +1,112 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Bell, ShieldCheck, Users } from 'lucide-react';
 
 const scenarios = [
   {
     id: 1,
-    title: "Emergency Alert",
-    description: "Evac4Me detects a nearby disaster and instantly alerts you with critical information.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-        <line x1="12" y1="9" x2="12" y2="13"></line>
-        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-      </svg>
-    )
+    title: "Disaster Alert Received",
+    description: "Evac4Me sends an immediate alert with clear information about the emergency situation, helping users stay informed.",
+    icon: <Bell className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-[#743d58]" />
   },
   {
     id: 2,
-    title: "Evacuation Routes",
-    description: "The app instantly displays the safest evacuation routes based on real-time data.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
-        <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
-        <path d="M12 3v6"></path>
-      </svg>
-    )
+    title: "Safe Zone Reached",
+    description: "Once the user reaches a designated safe zone, the app confirms their arrival and provides additional safety information.",
+    icon: <ShieldCheck className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-[#743d58]" />
   },
   {
     id: 3,
-    title: "Teaching Method Used",
-    description: "Our expert instructors use hands-on, practical approaches to ensure you master every skill.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-      </svg>
-    )
+    title: "Family Notified",
+    description: "With a single tap of the I'm Safe button, loved ones receive notifications about the user's safety and location.",
+    icon: <Users className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-[#743d58]" />
   }
 ];
 
 const ScenarioSection = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
   const scenarioRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
     );
 
     scenarioRefs.current.forEach((ref) => {
-      if (ref) observerRef.current?.observe(ref);
+      if (ref) observer.observe(ref);
     });
 
     return () => {
-      observerRef.current?.disconnect();
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <section id="scenarios" className="py-24 bg-gradient-to-br from-purple-900 to-pink-600 text-white scrolling-section relative">
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0h50v50H50V0zm0 50h50v50H50V50zM0 50h50v50H0V50zM0 0h50v50H0V0z' fill='%23ffffff' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+    <section 
+      id="scenarios" 
+      ref={sectionRef}
+      className="py-16 sm:py-20 lg:py-24 bg-[#f9f2f7] text-gray-900 relative overflow-hidden"
+    >
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0h50v50H50V0zm0 50h50v50H50V50zM0 50h50v50H0V50zM0 0h50v50H0V0z' fill='%23743d58' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E")`,
         backgroundSize: "60px 60px"
       }}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-16 pb-4 border-b border-white/20 text-white">
-          Gain an In-Depth<br/>Understanding of Our<br/>Bootcamp Program
+        <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-semibold text-center mb-12 sm:mb-16 pb-4 border-b border-[#743d58]/20">
+          How Evac4Me Works During An Emergency
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
           {scenarios.map((scenario, index) => (
-            <div 
+            <Card 
               key={scenario.id}
-              className="scenario-item flex flex-col items-start text-left"
               ref={el => scenarioRefs.current[index] = el}
-              style={{ transitionDelay: `${index * 0.1}s` }}
+              className="flex flex-col items-start text-left p-6 sm:p-8 bg-white/80 backdrop-blur-sm border border-[#743d58]/10 hover:border-[#743d58]/30 transition-all duration-300 hover:shadow-lg opacity-0 translate-y-10"
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="mb-6">{scenario.icon}</div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{scenario.title}</h3>
-              <p className="text-gray-200">{scenario.description}</p>
-            </div>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#743d58]/10 flex items-center justify-center mb-6">
+                {scenario.icon}
+              </div>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-gray-900">
+                {scenario.title}
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                {scenario.description}
+              </p>
+            </Card>
           ))}
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-up {
+          animation: fadeUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
