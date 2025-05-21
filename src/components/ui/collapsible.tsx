@@ -18,20 +18,22 @@ const CollapsibleTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <style jsx global>{`
-      .group[data-state="open"] .collapsible-plus {
-        display: none;
-      }
-      .group[data-state="open"] .collapsible-minus {
-        display: block;
-      }
-      .group[data-state="closed"] .collapsible-plus {
-        display: block;
-      }
-      .group[data-state="closed"] .collapsible-minus {
-        display: none;
-      }
-    `}</style>
+    <style>
+      {`
+        .group[data-state="open"] .collapsible-plus {
+          display: none;
+        }
+        .group[data-state="open"] .collapsible-minus {
+          display: block;
+        }
+        .group[data-state="closed"] .collapsible-plus {
+          display: block;
+        }
+        .group[data-state="closed"] .collapsible-minus {
+          display: none;
+        }
+      `}
+    </style>
   </CollapsiblePrimitive.Trigger>
 ))
 CollapsibleTrigger.displayName = CollapsiblePrimitive.Trigger.displayName
