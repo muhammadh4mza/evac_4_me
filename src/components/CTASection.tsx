@@ -25,25 +25,23 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-16 hexagon-gradient text-gray-900">
+    <section className="py-20 dark-hexagon-gradient text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Sign up to be notified when Evac4Me launches</h2>
-        <p className="max-w-2xl mx-auto mb-8 text-lg">
-          Be among the first to access our life-saving app and help make emergency evacuation 
-          safer and more accessible for everyone.
-        </p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Sign up now and improve your skills in no time with our bootcamp program!
+        </h2>
         
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <form onSubmit={handleSubmit} className="max-w-4xl mx-auto mt-12">
+          <div className="flex flex-col sm:flex-row items-center gap-3 p-2 bg-black/30 backdrop-blur-sm rounded-full">
             <Input 
               type="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email" 
-              className="flex-1 px-4 py-3 rounded-full border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
+              placeholder="Enter your email...." 
+              className="flex-1 px-6 py-4 h-14 rounded-full border-none bg-transparent text-white placeholder-white/70 focus:outline-none focus:ring-0"
             />
-            <Button type="submit" className="bg-gray-900 hover:bg-gray-800 rounded-full px-8 text-white">
-              Notify Me
+            <Button type="submit" className="h-12 bg-white hover:bg-gray-100 text-black rounded-full px-8 font-medium">
+              Get Started
             </Button>
           </div>
         </form>
