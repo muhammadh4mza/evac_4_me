@@ -57,7 +57,7 @@ const ScenarioSection = () => {
     <section 
       id="scenarios" 
       ref={sectionRef}
-      className="py-16 sm:py-20 lg:py-24 bg-[#f9f2f7] text-gray-900 relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24  text-gray-900 relative overflow-hidden"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5" style={{

@@ -72,7 +72,7 @@ const HowItWorksSection = () => {
         <div className="hidden md:block">
           <div className="relative">
             {/* Progress line */}
-            <div className="absolute left-1/4 right-1/4 top-1/2 h-1.5 bg-gray-200/80 -translate-y-1/2"></div>
+            {/* <div className="absolute left-1/4 right-1/4 top-1/2 h-1.5 bg-gray-200/80 -translate-y-1/2"></div> */}
             
             <div className="relative grid grid-cols-6 gap-4">
               {steps.map((step) => (

@@ -21,18 +21,18 @@ const HeroSection = () => {
             A simple, accessible solution to help everyone evacuate safely during emergencies, designed with special focus on elderly and intellectually disabled users.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-            <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base md:text-lg">
+            <Button className="rounded-lg text-card-foreground shadow-sm flex flex-col items-start text-left p-2 sm:p-4 bg-[#743d58] text-white/90 hover:text-gray-900  backdrop-blur-sm border border-[#743d58]/10 hover:bg-white/80 hover:border-[#743d58]/30 transition-all duration-300 hover:shadow-lg opacity-0 translate-y-10 animate-fade-up">
               Coming Soon to App Stores
             </Button>
             <Button 
               variant="outline" 
-              className="border-gray-900 text-gray-900 bg-transparent hover:bg-gray-100 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base md:text-lg"
+              className="rounded-lg text-card-foreground shadow-sm flex flex-col items-start text-left p-2 sm:p-4 bg-white/80 backdrop-blur-sm border border-[#743d58]/10 hover:bg-[#743d58] hover:border-[#743d58]/30 transition-all duration-300 hover:shadow-lg opacity-0 translate-y-10 animate-fade-up"
             >
               Contact Us / Collaborate
             </Button>
             <Button 
               variant="outline" 
-              className="border-gray-900 text-gray-900 bg-transparent hover:bg-gray-100 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base md:text-lg"
+              className="rounded-lg text-card-foreground shadow-sm flex flex-col items-start text-left p-2 sm:p-4 bg-white/80 backdrop-blur-sm border border-[#743d58]/10 hover:bg-[#743d58] hover:border-[#743d58]/30 transition-all duration-300 hover:shadow-lg opacity-0 translate-y-10 animate-fade-up"
             >
               Invest in Evac4Me
             </Button>
