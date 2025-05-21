@@ -1,57 +1,56 @@
 
 import React from 'react';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Minus, Plus } from "lucide-react";
 
-const faqs = [
+const bootcampFaqs = [
   {
-    question: "When will the Evac4Me app be available?",
-    answer: "The Evac4Me app is currently in development and we're planning to launch a beta version in the coming months. Sign up for our newsletter to be notified when it's available."
+    question: "Who is suitable for bootcamp?",
+    answer: "Bootcamp is suitable for people who want to acquire specific skills with limited time. Anyone looking to improve their technical skills or learn new skills, such as programming or web design, will find this program useful."
   },
   {
-    question: "Is Evac4Me free to use?",
-    answer: "Yes, the core features of Evac4Me including emergency alerts, evacuation routes, and the 'I'm Safe' notification will be completely free. We believe safety information should be accessible to everyone."
+    question: "How long will it take to complete bootcamp?",
+    answer: "Our bootcamp programs range from 8 to 16 weeks, depending on the intensity and specific track you choose. Full-time programs typically take 12 weeks, while part-time options can extend to 16 weeks to accommodate those with other commitments."
   },
   {
-    question: "How does Evac4Me help elderly or disabled users?",
-    answer: "Evac4Me features a special 'Drive to Safe Point' function that connects vulnerable users with nearby assistance. The app is also designed with extra-large buttons, simple navigation, and voice guidance to ensure accessibility for all users."
+    question: "How much does it cost to join a bootcamp?",
+    answer: "The cost of our bootcamps varies based on the program length and specialization. Prices typically range from $8,000 to $15,000, with various financing options, scholarships, and income share agreements available to make it accessible."
   },
   {
-    question: "What types of emergencies does the app cover?",
-    answer: "Evac4Me will provide alerts and evacuation guidance for natural disasters (wildfires, floods, hurricanes, earthquakes) and manmade emergencies (chemical spills, major accidents) based on official emergency management data."
+    question: "Are there any special requirements to join the bootcamp?",
+    answer: "While no formal technical qualifications are required, we do recommend completing our free prep course before starting. Applicants should have basic computer literacy, problem-solving abilities, and strong motivation to learn intensively."
   },
   {
-    question: "How does the app determine safe evacuation routes?",
-    answer: "The app uses real-time emergency data, traffic information, and designated safe zones from local emergency management agencies to calculate the safest routes away from danger areas."
-  },
-  {
-    question: "Will Evac4Me work without internet access?",
-    answer: "Evac4Me will include offline capabilities that store your local area map and basic evacuation routes. While real-time updates require connectivity, the core navigation features will work offline."
+    question: "What is covered in the bootcamp?",
+    answer: "Our bootcamp curriculum covers both technical skills and professional development. Technical topics include programming fundamentals, web development technologies, data structures, and project work. Professional development covers job search strategies, interview preparation, and portfolio building."
   }
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 bg-gray-50 scrolling-section">
+    <section id="faq" className="py-20 bg-black text-white scrolling-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Find answers to common questions about the Evac4Me app and how it works.
-        </p>
+        <h2 className="text-5xl md:text-6xl font-bold text-center mb-16">Frequently Asked Questions</h2>
         
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-4xl mx-auto space-y-4">
+          {bootcampFaqs.map((faq, index) => (
+            <Collapsible key={index} className="border border-zinc-800 rounded-3xl overflow-hidden">
+              <CollapsibleTrigger className="flex justify-between items-center w-full p-6 text-xl md:text-2xl font-medium text-left">
+                {faq.question}
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Plus className="h-5 w-5 block collapsible-plus" />
+                  <Minus className="h-5 w-5 hidden collapsible-minus" />
+                </div>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="px-6 pb-6 text-zinc-300">
+                <p>{faq.answer}</p>
+              </CollapsibleContent>
+            </Collapsible>
+          ))}
         </div>
       </div>
     </section>
