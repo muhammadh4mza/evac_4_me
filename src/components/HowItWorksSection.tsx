@@ -1,72 +1,93 @@
 
 import React from 'react';
+import { Card } from "@/components/ui/card";
 
-const steps = [
+// Testimonial data
+const testimonials = [
   {
-    number: "01",
-    title: "Download the App",
-    description: "Get Evac4Me from your app store. Set up your profile and add emergency contacts.",
-    color: "bg-evac-blue"
+    name: "Melvin",
+    position: "CEO Tokpet",
+    content: "I never thought that I would have the technical skills that I have now. Thanks to this bootcamp program which gave me the opportunity to learn from industry experts and prepared me for an amazing new career.",
+    isDark: false
   },
   {
-    number: "02",
-    title: "Set Your Location",
-    description: "Allow the app to access your location or set your home address for accurate alerts.",
-    color: "bg-evac-orange"
+    name: "Jarwo Sutejo",
+    position: "CEO Tokpet",
+    content: "I learned a lot about how to work in a team and face challenges in this bootcamp program. My study experience here has helped me broaden my professional network and prepared me for a career in technology.",
+    isDark: true
   },
   {
-    number: "03",
-    title: "Receive Alerts",
-    description: "When a disaster occurs, you'll get immediate notifications with critical information.",
-    color: "bg-red-500"
+    name: "Melvin",
+    position: "CEO Tokpet",
+    content: "I am happy to have joined this bootcamp program. Besides gaining technical knowledge, I also learned a lot about teamwork and how to work in a productive work environment. I feel more confident and ready to face future challenges.",
+    isDark: false
   },
   {
-    number: "04",
-    title: "Follow Evacuation Routes",
-    description: "The app will show you the safest paths to the nearest designated safe zones.",
-    color: "bg-evac-blue"
+    name: "Melvin",
+    position: "CEO Tokpet",
+    content: "I am very impressed with the quality of the instructors in this bootcamp program. They really mastered the material and provided me with a lot of valuable insights. I recommend this program to anyone looking to start a career in the technology industry.",
+    isDark: false
   },
   {
-    number: "05",
-    title: "Reach Safety",
-    description: "Once you arrive at a safe location, the app confirms you've reached a secure area.",
-    color: "bg-evac-green"
-  },
-  {
-    number: "06",
-    title: "Notify Loved Ones",
-    description: "Tap the \"I'm Safe\" button to automatically alert your emergency contacts.",
-    color: "bg-evac-orange"
+    name: "Melvin",
+    position: "CEO Tokpet",
+    content: "I love how well designed this bootcamp program is. They provide clear and in-depth explanations of the topics being taught, and allow me to study in a very practical way. I feel I have learned a lot in such a short time.",
+    isDark: false
   }
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50 scrolling-section">
+    <section id="how-it-works" className="py-20 hexagon-gradient scrolling-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">How It Works</h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Evac4Me makes emergency evacuation simple and accessible for everyone.
-        </p>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 leading-tight">
+          Said those who joined our<br />bootcamp program
+        </h2>
         
-        <div className="relative">
-          <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block"></div>
-          
-          <div className="space-y-12">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:mr-auto pr-12' : 'md:ml-auto md:pl-12'}`}>
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <div className={`${step.color} w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mb-4`}>
-                      {step.number}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* First row - 2 cards */}
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className={`p-8 rounded-3xl ${testimonials[0].isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                  <div>
+                    <h4 className="font-semibold">{testimonials[0].name}</h4>
+                    <p className={`text-sm ${testimonials[0].isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonials[0].position}</p>
                   </div>
                 </div>
-                <div className={`hidden md:block absolute top-6 ${index % 2 === 0 ? 'right-1/2 -mr-3' : 'left-1/2 -ml-3'} w-6 h-6 ${step.color} rounded-full border-4 border-white`}></div>
-              </div>
-            ))}
+                <p className={testimonials[0].isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonials[0].content}</p>
+              </Card>
+              
+              <Card className={`p-8 rounded-3xl ${testimonials[1].isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                  <div>
+                    <h4 className="font-semibold">{testimonials[1].name}</h4>
+                    <p className={`text-sm ${testimonials[1].isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonials[1].position}</p>
+                  </div>
+                </div>
+                <p className={testimonials[1].isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonials[1].content}</p>
+              </Card>
+            </div>
+          </div>
+          
+          {/* Second row - 3 cards */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.slice(2).map((testimonial, index) => (
+                <Card key={index} className={`p-8 rounded-3xl ${testimonial.isDark ? 'dark-hexagon-gradient text-white' : 'bg-white/80'}`}>
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className={`text-sm ${testimonial.isDark ? 'text-gray-300' : 'text-gray-600'}`}>{testimonial.position}</p>
+                    </div>
+                  </div>
+                  <p className={testimonial.isDark ? 'text-gray-100' : 'text-gray-700'}>{testimonial.content}</p>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>
