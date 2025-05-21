@@ -56,3 +56,20 @@
     linear-gradient(135deg, #4a1d96 0%, #be185d 100%);
   background-size: 60px 60px, 100% 100%;
 }
+
+/* Features section (dark theme) */
+.features-dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.feature-card-dark {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.feature-card-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
