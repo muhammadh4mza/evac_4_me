@@ -9,6 +9,7 @@ import CollaborateSection from '@/components/CollaborateSection';
 import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import ProblemsSection from '@/components/ProblemsSection';
 
 const Index = () => {
   // Smooth scroll functionality
@@ -37,6 +38,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <ScenarioSection />
+      <ProblemsSection />
       <FeaturesSection />
       <HowItWorksSection />
       {/* <FAQSection /> */}

@@ -57,18 +57,22 @@ const ScenarioSection = () => {
     <section 
       id="scenarios" 
       ref={sectionRef}
-      className="py-16 sm:py-20 lg:py-24  text-gray-900 relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24 text-gray-900 relative overflow-hidden"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0h50v50H50V0zm0 50h50v50H50V50zM0 50h50v50H0V50zM0 0h50v50H0V0z' fill='%23743d58' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E")`,
         backgroundSize: "60px 60px"
       }}></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-semibold text-center mb-12 sm:mb-16 pb-4 border-b border-[#743d58]/20">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-semibold text-center mb-6 pb-4 border-b border-[#743d58]/20">
           How Evac4Me Works During An Emergency
         </h2>
+
+        <p className="max-w-3xl mx-auto text-center text-gray-700 text-base sm:text-lg mb-12 leading-relaxed">
+          EVAC4ME is built with a mission to safeguard communities by helping people avoid disasters—such as hurricanes, power outages, fires, and earthquakes—by guiding them to safe locations. Users receive free emergency alerts on their phones, while premium features unlock real-time evacuation routes, shelter options, and more. Special support is provided for disabled individuals and seniors, with drivers escorting them to medical facilities. Our goal is simple: to make safety accessible for everyone, without requiring a subscription for critical alerts.
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
           {scenarios.map((scenario, index) => (
