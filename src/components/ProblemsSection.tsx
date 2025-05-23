@@ -33,8 +33,7 @@ const ProblemsSection = () => {
               <div>
                 <h3 className="text-xl font-semibold text-[#743d58] mb-2">Highly Needed</h3>
                 <p className="text-base leading-relaxed">
-                  
-                            Due to the high rate of climate change, natural disasters have increased. Therefore, we need disaster management mobile applications to protect ourselves and our families.
+                  Due to the high rate of climate change, natural disasters have increased. Therefore, we need disaster management mobile applications to protect ourselves and our families.
                 </p>
               </div>
 
