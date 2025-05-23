@@ -13,7 +13,7 @@ const ProblemsSection = () => {
             <img
               src={problemImage}
               alt="Problem with existing apps"
-              className="rounded-2xl shadow-xl object-cover w-full h-full max-h-[400px]"
+              className="rounded-2xl shadow-xl object-cover w-full h-full max-h-[600px]"
             />
           </div>
 
@@ -28,6 +28,13 @@ const ProblemsSection = () => {
                 <h3 className="text-xl font-semibold text-[#743d58] mb-2">High Subscription</h3>
                 <p className="text-base leading-relaxed">
                   Other apps in the market have high subscription rates without offering the specific services that EVAC4ME brings.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#743d58] mb-2">Highly Needed</h3>
+                <p className="text-base leading-relaxed">
+                  
+                            Due to the high rate of climate change, natural disasters have increased. Therefore, we need disaster management mobile applications to protect ourselves and our families.
                 </p>
               </div>
 
