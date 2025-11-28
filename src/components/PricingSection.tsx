@@ -113,7 +113,7 @@ const HowItWorksSection = () => {
                   <button className={`w-full mt-6 py-3 px-4 rounded-lg font-semibold transition-all ${
                     plan.popular
                       ? 'bg-[#743d58] text-white hover:bg-[#5a2f45]'
-                      : 'bg-[#743d58] text-white hover:bg-blue-700'
+                      : 'bg-[#743d58] text-white hover:bg-[#5a2f45]'
                   }`}>
                     Get Started
                   </button>
@@ -177,7 +177,7 @@ const HowItWorksSection = () => {
                     <button className={`w-full mt-4 py-2 px-4 rounded-lg font-semibold text-sm transition-all ${
                       plan.popular
                         ? 'bg-[#743d58] text-white hover:bg-[#5a2f45]'
-                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-[#743d58] text-white hover:bg-[#5a2f45]'
                     }`}>
                       Get Started
                     </button>
