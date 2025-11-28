@@ -10,6 +10,8 @@ import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import ProblemsSection from '@/components/ProblemsSection';
+import ApplicationRoadMap from '@/components/ApplicationRoadMap';
+import PricingSection from '@/components/PricingSection';
 
 const Index = () => {
   // Smooth scroll functionality
@@ -41,8 +43,15 @@ const Index = () => {
       <ProblemsSection />
       <FeaturesSection />
       <HowItWorksSection />
+
+
+      
       {/* <FAQSection /> */}
+      
       <CollaborateSection />
+      <ApplicationRoadMap />
+      <PricingSection />
+
       {/* <CTASection /> */}
       <Footer />
     </div>
